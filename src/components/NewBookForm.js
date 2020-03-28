@@ -5,23 +5,23 @@ const NewBookForm = () => {
   const { dispatch } = useContext(BookContext);
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch({ type: 'ADD_BOOK', book: { title, author }});
+    dispatch({ type: 'ADD_BOOK', book: { title, author } });
     setTitle('');
     setAuthor('');
   }
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" placeholder="book title" value={title}
+      <input type="text" placeholder="Título del Libro" value={title}
         onChange={(e) => setTitle(e.target.value)} required />
-      <input type="text" placeholder="author name" value={author}
+      <input type="text" placeholder="Nombre del Autor" value={author}
         onChange={(e) => setAuthor(e.target.value)} required />
-      <input type="submit" value="add book" />
+      <input type="submit" value="Añadir Libro" />
     </form>
   );
 }
- 
+
 export default NewBookForm;
